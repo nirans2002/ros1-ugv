@@ -130,7 +130,111 @@
     <axis xyz="0.0 1.0 0.0"/>
     <limit lower="0.0" upper="6.28" effort="0.0" velocity="0.01"/>
 </joint>
+
 <!-- wheek right back -->
+
+<link name="wheel_right_back">
+    <inertial>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <mass value="0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual name="">
+        <!-- <origin xyz="0.075 -0.04 -0.045" rpy="0.0 0.0 0.0"/> -->
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="package://ugv/src/meshes/WheelB.dae"/>
+        </geometry>
+        <material name="">
+            <color rgba="1.0 0.0 0.0 1.0"/>
+            <texture filename=""/>
+        </material>
+    </visual>
+    <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <geometry>
+            <box size="0.0 0.0 0.0"/>
+        </geometry>
+    </collision>
+</link>
+
+<joint name="wheel_right_back_joint" type="continuous">
+    <!-- <origin xyz="0.075 -0.04 -0.045" rpy="0.0 0.0 0.0"/> -->
+    <origin xyz="-0.15 -0.08 -0.09" rpy="0.0 0.0 0.0"/>
+    <parent link="rocker_right"/>
+    <child link="wheel_right_back"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit lower="0.0" upper="6.28" effort="0.0" velocity="0.01"/>
+</joint>
 <!-- wheel left front -->
+
+<link name="wheel_left_front">
+    <inertial>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <mass value="0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual name="">
+        <!-- <origin xyz="0.075 -0.04 -0.045" rpy="0.0 0.0 0.0"/> -->
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="package://ugv/src/meshes/WheelA.dae"/>
+        </geometry>
+        <material name="">
+            <color rgba="1.0 0.0 0.0 1.0"/>
+            <texture filename=""/>
+        </material>
+    </visual>
+    <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <geometry>
+            <box size="0.0 0.0 0.0"/>
+        </geometry>
+    </collision>
+</link>
+
+<joint name="wheel_left_front_joint" type="continuous">
+    <!-- <origin xyz="0.075 -0.04 -0.045" rpy="0.0 0.0 0.0"/> -->
+    <origin xyz="0.15 -0.08 -0.09" rpy="0.0 0.0 0.0"/>
+    <parent link="rocker_left"/>
+    <child link="wheel_left_front"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit lower="0.0" upper="6.28" effort="0.0" velocity="0.01"/>
+</joint>
+
 <!-- wheel left back -->
+
+<link name="wheel_left_back">
+    <inertial>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <mass value="0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual name="">
+        <!-- <origin xyz="0.075 -0.04 -0.045" rpy="0.0 0.0 0.0"/> -->
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="package://ugv/src/meshes/WheelA.dae"/>
+        </geometry>
+        <material name="">
+            <color rgba="1.0 0.0 0.0 1.0"/>
+            <texture filename=""/>
+        </material>
+    </visual>
+    <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <geometry>
+            <box size="0.0 0.0 0.0"/>
+        </geometry>
+    </collision>
+</link>
+
+<joint name="wheel_left_back_joint" type="continuous">
+    <!-- <origin xyz="0.075 -0.04 -0.045" rpy="0.0 0.0 0.0"/> -->
+    <origin xyz="-0.15 -0.08 -0.09" rpy="0.0 0.0 0.0"/>
+    <parent link="rocker_left"/>
+    <child link="wheel_left_back"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit lower="0.0" upper="6.28" effort="0.0" velocity="0.01"/>
+</joint>
 </robot>
