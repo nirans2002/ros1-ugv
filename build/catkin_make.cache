@@ -1,2 +1,2 @@
-
+ugv
 -DCATKIN_DEVEL_PREFIX=/home/niran/ugv_ws/devel -DCMAKE_INSTALL_PREFIX=/home/niran/ugv_ws/install -G Unix Makefiles

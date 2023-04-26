@@ -35,3 +35,15 @@
 /home/niran/ugv_ws/build/gtest/googletest/CMakeFiles/test.dir
 /home/niran/ugv_ws/build/gtest/googletest/CMakeFiles/gtest_main.dir
 /home/niran/ugv_ws/build/gtest/googletest/CMakeFiles/gtest.dir
+/home/niran/ugv_ws/build/ugv/CMakeFiles/install/strip.dir
+/home/niran/ugv_ws/build/ugv/CMakeFiles/install/local.dir
+/home/niran/ugv_ws/build/ugv/CMakeFiles/edit_cache.dir
+/home/niran/ugv_ws/build/ugv/CMakeFiles/test.dir
+/home/niran/ugv_ws/build/ugv/CMakeFiles/std_msgs_generate_messages_py.dir
+/home/niran/ugv_ws/build/ugv/CMakeFiles/std_msgs_generate_messages_nodejs.dir
+/home/niran/ugv_ws/build/ugv/CMakeFiles/std_msgs_generate_messages_lisp.dir
+/home/niran/ugv_ws/build/ugv/CMakeFiles/std_msgs_generate_messages_eus.dir
+/home/niran/ugv_ws/build/ugv/CMakeFiles/install.dir
+/home/niran/ugv_ws/build/ugv/CMakeFiles/list_install_components.dir
+/home/niran/ugv_ws/build/ugv/CMakeFiles/rebuild_cache.dir
+/home/niran/ugv_ws/build/ugv/CMakeFiles/std_msgs_generate_messages_cpp.dir

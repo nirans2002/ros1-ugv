@@ -1,0 +1,8 @@
+prefix=/home/niran/ugv_ws/devel
+
+Name: ugv
+Description: Description of ugv
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
