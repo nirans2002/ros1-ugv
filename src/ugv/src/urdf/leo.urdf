@@ -1,0 +1,134 @@
+<robot name="leo">
+<!-- chassis -->
+<link name="chassis">
+    <inertial>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <mass value="0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual name="">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <geometry>
+            <!-- <mesh filename="package://explorer_bot/meshes/Chassis_outline.stl"/> -->
+            <mesh filename="package://explorer_bot/meshes/Chassis.dae"/>
+        </geometry>
+        <material name="">
+            <color rgba="1.0 0.0 1.0 1.0"/>
+            <texture filename=""/>
+        </material>
+    </visual>
+    <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <geometry>
+            <box size="0.0 0.0 0.0"/>
+        </geometry>
+    </collision>
+</link>
+
+<!-- right -->
+
+<link name="rocker_right">
+    <inertial>
+        <origin xyz="0.003  -0.145 -0.045" rpy="0.0 0.0 0.0"/>
+        <mass value="0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual name="">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <geometry>
+            <mesh filename="package://explorer_bot/meshes/Rocker.dae"/>
+
+        </geometry>
+        <material name="">
+            <color rgba="1.0 0.0 0.0 1.0"/>
+            <texture filename=""/>
+        </material>
+    </visual>
+    <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <geometry>
+            <box size="0.0 0.0 0.0"/>
+        </geometry>
+    </collision>
+</link>
+
+
+<joint name="rocker_right_joint" type="fixed">
+    <origin xyz="0.003 -0.145 -0.045" rpy="0.0 0.0 0.0"/>
+    <parent link="chassis"/>
+    <child link="rocker_right"/>
+    <axis xyz="0.0 0.0 0.0"/>
+    <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+</joint>
+
+    <!-- left -->
+<link name="rocker_left">
+    <inertial>
+        <origin xyz="0.003  0.145 -0.045" rpy="0.0 0.0 0.0"/>
+        <mass value="0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual name="">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <geometry>
+            <mesh filename="package://explorer_bot/meshes/Rocker.dae"/>
+
+        </geometry>
+        <material name="">
+            <color rgba="1.0 0.0 0.0 1.0"/>
+            <texture filename=""/>
+        </material>
+    </visual>
+    <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <geometry>
+            <box size="0.0 0.0 0.0"/>
+        </geometry>
+    </collision>
+</link>
+
+
+<joint name="rocker_left_joint" type="fixed">
+    <origin xyz="0.003 0.145 -0.045" rpy="0.0 0.0 3.14"/>
+    <parent link="chassis"/>
+    <child link="rocker_left"/>
+    <axis xyz="0.0 0.0 0.0"/>
+    <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+</joint>
+
+<!-- wheel right front -->
+<link name="wheel_right_front">
+    <inertial>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <mass value="0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual name="">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="package://explorer_bot/meshes/WheelA.dae"/>
+        </geometry>
+        <material name="">
+            <color rgba="1.0 0.0 0.0 1.0"/>
+            <texture filename=""/>
+        </material>
+    </visual>
+    <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <geometry>
+            <box size="0.0 0.0 0.0"/>
+        </geometry>
+    </collision>
+</link>
+
+<joint name="wheel_right_front_joint" type="revolute">
+    <origin xyz="0.0 0.2 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="rocker_right"/>
+    <child link="wheel_right_front"/>
+    <axis xyz="0.0 0.0 0.0"/>
+    <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+</joint>
+<!-- wheek right back -->
+<!-- wheel left front -->
+<!-- wheel left back -->
+</robot>
