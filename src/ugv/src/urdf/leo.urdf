@@ -29,9 +29,12 @@
 
 <link name="rocker_right">
     <inertial>
-        <origin xyz="0.003  -0.145 -0.045" rpy="0.0 0.0 0.0"/>
-        <mass value="0.0"/>
-        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        <mass value="1.387336"/>
+          <origin xyz="0 0.01346 -0.06506"/>
+        <inertia
+            ixx="0.002956" ixy="-0.000001489324" ixz="-0.000008103407"
+            iyy="0.02924"  iyz="0.00007112"
+            izz="0.02832"/>
     </inertial>
     <visual name="">
         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
@@ -44,12 +47,11 @@
             <texture filename=""/>
         </material>
     </visual>
-    <collision>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-        <geometry>
-            <box size="0.0 0.0 0.0"/>
-        </geometry>
-    </collision>
+     <collision>
+          <geometry>
+            <mesh filename="package://ugv/src/meshes/Rocker_outline.stl"/>
+          </geometry>
+        </collision>
 </link>
 
 
@@ -63,10 +65,13 @@
 
     <!-- left -->
 <link name="rocker_left">
-    <inertial>
-        <origin xyz="0.003  0.145 -0.045" rpy="0.0 0.0 0.0"/>
-        <mass value="0.0"/>
-        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        <inertial>
+        <mass value="1.387336"/>
+          <origin xyz="0 0.01346 -0.06506"/>
+        <inertia
+            ixx="0.002956" ixy="-0.000001489324" ixz="-0.000008103407"
+            iyy="0.02924"  iyz="0.00007112"
+            izz="0.02832"/>
     </inertial>
     <visual name="">
         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
@@ -80,11 +85,10 @@
         </material>
     </visual>
     <collision>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-        <geometry>
-            <box size="0.0 0.0 0.0"/>
-        </geometry>
-    </collision>
+          <geometry>
+            <mesh filename="package://ugv/src/meshes/Rocker_outline.stl"/>
+          </geometry>
+        </collision>
 </link>
 
 
@@ -99,10 +103,13 @@
 <!-- wheel right front -->
 <link name="wheel_right_front">
     <inertial>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-        <mass value="0.0"/>
-        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
-    </inertial>
+          <mass value="0.283642"/>
+          <origin xyz="0 0.030026 0"/>
+          <inertia
+            ixx="0.000391"  ixy="0.00000123962" ixz="5.52582e-7"
+            iyy="0.0004716" iyz="-0.000002082042"
+            izz="0.000391"/>
+        </inertial>
     <visual name="">
         <!-- <origin xyz="0.075 -0.04 -0.045" rpy="0.0 0.0 0.0"/> -->
         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
@@ -114,12 +121,23 @@
             <texture filename=""/>
         </material>
     </visual>
-    <collision>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-        <geometry>
-            <box size="0.0 0.0 0.0"/>
-        </geometry>
-    </collision>
+  <collision>
+          <origin xyz="0 0.04485 0" rpy="1.57 0 0"/>
+          <geometry>
+            <cylinder radius="0.057" length="0.07"/>
+          </geometry>
+        </collision>
+        <collision>
+          <origin xyz="0 0.04485 0" rpy="1.57 0 0"/>
+          <geometry>
+            <cylinder radius="0.0625" length="0.04"/>
+          </geometry>
+        </collision>
+        <collision>
+          <geometry>
+            <mesh filename="package://ugv/src/meshes/Wheel_outline.stl"/>
+          </geometry>
+        </collision>
 </link>
 
 <joint name="wheel_right_front_joint" type="continuous">
@@ -135,10 +153,13 @@
 
 <link name="wheel_right_back">
     <inertial>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-        <mass value="0.0"/>
-        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
-    </inertial>
+          <mass value="0.283642"/>
+          <origin xyz="0 0.030026 0"/>
+          <inertia
+            ixx="0.000391"  ixy="0.00000123962" ixz="5.52582e-7"
+            iyy="0.0004716" iyz="-0.000002082042"
+            izz="0.000391"/>
+        </inertial>
     <visual name="">
         <!-- <origin xyz="0.075 -0.04 -0.045" rpy="0.0 0.0 0.0"/> -->
         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
@@ -151,11 +172,22 @@
         </material>
     </visual>
     <collision>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-        <geometry>
-            <box size="0.0 0.0 0.0"/>
-        </geometry>
-    </collision>
+          <origin xyz="0 0.04485 0" rpy="1.57 0 0"/>
+          <geometry>
+            <cylinder radius="0.057" length="0.07"/>
+          </geometry>
+        </collision>
+        <collision>
+          <origin xyz="0 0.04485 0" rpy="1.57 0 0"/>
+          <geometry>
+            <cylinder radius="0.0625" length="0.04"/>
+          </geometry>
+        </collision>
+        <collision>
+          <geometry>
+            <mesh filename="package://ugv/src/meshes/Wheel_outline.stl"/>
+          </geometry>
+        </collision>
 </link>
 
 <joint name="wheel_right_back_joint" type="continuous">
@@ -170,10 +202,13 @@
 
 <link name="wheel_left_front">
     <inertial>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-        <mass value="0.0"/>
-        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
-    </inertial>
+          <mass value="0.283642"/>
+          <origin xyz="0 0.030026 0"/>
+          <inertia
+            ixx="0.000391"  ixy="0.00000123962" ixz="5.52582e-7"
+            iyy="0.0004716" iyz="-0.000002082042"
+            izz="0.000391"/>
+        </inertial>
     <visual name="">
         <!-- <origin xyz="0.075 -0.04 -0.045" rpy="0.0 0.0 0.0"/> -->
         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
@@ -186,11 +221,22 @@
         </material>
     </visual>
     <collision>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-        <geometry>
-            <box size="0.0 0.0 0.0"/>
-        </geometry>
-    </collision>
+          <origin xyz="0 0.04485 0" rpy="1.57 0 0"/>
+          <geometry>
+            <cylinder radius="0.057" length="0.07"/>
+          </geometry>
+        </collision>
+        <collision>
+          <origin xyz="0 0.04485 0" rpy="1.57 0 0"/>
+          <geometry>
+            <cylinder radius="0.0625" length="0.04"/>
+          </geometry>
+        </collision>
+        <collision>
+          <geometry>
+            <mesh filename="package://ugv/src/meshes/Wheel_outline.stl"/>
+          </geometry>
+        </collision>
 </link>
 
 <joint name="wheel_left_front_joint" type="continuous">
@@ -205,11 +251,14 @@
 <!-- wheel left back -->
 
 <link name="wheel_left_back">
-    <inertial>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-        <mass value="0.0"/>
-        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
-    </inertial>
+   <inertial>
+          <mass value="0.283642"/>
+          <origin xyz="0 0.030026 0"/>
+          <inertia
+            ixx="0.000391"  ixy="0.00000123962" ixz="5.52582e-7"
+            iyy="0.0004716" iyz="-0.000002082042"
+            izz="0.000391"/>
+        </inertial>
     <visual name="">
         <!-- <origin xyz="0.075 -0.04 -0.045" rpy="0.0 0.0 0.0"/> -->
         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
@@ -222,11 +271,22 @@
         </material>
     </visual>
     <collision>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-        <geometry>
-            <box size="0.0 0.0 0.0"/>
-        </geometry>
-    </collision>
+          <origin xyz="0 0.04485 0" rpy="1.57 0 0"/>
+          <geometry>
+            <cylinder radius="0.057" length="0.07"/>
+          </geometry>
+        </collision>
+        <collision>
+          <origin xyz="0 0.04485 0" rpy="1.57 0 0"/>
+          <geometry>
+            <cylinder radius="0.0625" length="0.04"/>
+          </geometry>
+        </collision>
+        <collision>
+          <geometry>
+            <mesh filename="package://ugv/src/meshes/Wheel_outline.stl"/>
+          </geometry>
+        </collision>
 </link>
 
 <joint name="wheel_left_back_joint" type="continuous">
