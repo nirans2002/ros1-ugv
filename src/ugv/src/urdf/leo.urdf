@@ -56,7 +56,7 @@
 
 
 <joint name="rocker_right_joint" type="fixed">
-    <origin xyz="0 0.01346 -0.06506" rpy="0.0 0.0 0.0"/>
+    <origin xyz="0.003 -0.145 -0.045" rpy="0.0 0.0 0.0"/>
     <parent link="chassis"/>
     <child link="rocker_right"/>
     <axis xyz="0.0 0.0 0.0"/>
@@ -142,11 +142,12 @@
 
 <joint name="wheel_right_front_joint" type="continuous">
     <!-- <origin xyz="0.075 -0.04 -0.045" rpy="0.0 0.0 0.0"/> -->
-    <origin xyz="0.15 -0.08 -0.09" rpy="0.0 0.0 0.0"/>
+   <origin xyz="0.15256 -0.08214 -0.08802" rpy="0 0 0"/>
     <parent link="rocker_right"/>
     <child link="wheel_right_front"/>
     <axis xyz="0.0 1.0 0.0"/>
-    <limit lower="0.0" upper="6.28" effort="0.0" velocity="0.01"/>
+   <limit effort="2.0" velocity="6.0"/>
+      <dynamics friction="0.3125" damping="0.1"/>
 </joint>
 
 <!-- wheek right back -->
@@ -192,11 +193,12 @@
 
 <joint name="wheel_right_back_joint" type="continuous">
     <!-- <origin xyz="0.075 -0.04 -0.045" rpy="0.0 0.0 0.0"/> -->
-    <origin xyz="-0.15 -0.08 -0.09" rpy="0.0 0.0 0.0"/>
+     <origin xyz="-0.15256 -0.08214 -0.08802" rpy="0 0 0"/>
     <parent link="rocker_right"/>
     <child link="wheel_right_back"/>
-    <axis xyz="0.0 1.0 0.0"/>
-    <limit lower="0.0" upper="6.28" effort="0.0" velocity="0.01"/>
+      <axis xyz="0 1 0"/>
+      <limit effort="2.0" velocity="6.0"/>
+      <dynamics friction="0.3125" damping="0.1"/> 
 </joint>
 <!-- wheel left front -->
 
@@ -213,7 +215,7 @@
         <!-- <origin xyz="0.075 -0.04 -0.045" rpy="0.0 0.0 0.0"/> -->
         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
         <geometry>
-          <mesh filename="package://ugv/src/meshes/WheelA.dae"/>
+          <mesh filename="package://ugv/src/meshes/WheelB.dae"/>
         </geometry>
         <material name="">
             <color rgba="1.0 0.0 0.0 1.0"/>
@@ -241,11 +243,12 @@
 
 <joint name="wheel_left_front_joint" type="continuous">
     <!-- <origin xyz="0.075 -0.04 -0.045" rpy="0.0 0.0 0.0"/> -->
-    <origin xyz="0.15 -0.08 -0.09" rpy="0.0 0.0 0.0"/>
+     <origin xyz="-0.15256 -0.08214 -0.08802" rpy="0 0 0"/>
     <parent link="rocker_left"/>
     <child link="wheel_left_front"/>
-    <axis xyz="0.0 1.0 0.0"/>
-    <limit lower="0.0" upper="6.28" effort="0.0" velocity="0.01"/>
+      <axis xyz="0 -1 0"/>
+      <limit effort="2.0" velocity="6.0"/>
+      <dynamics friction="0.3125" damping="0.1"/>
 </joint>
 
 <!-- wheel left back -->
@@ -263,7 +266,7 @@
         <!-- <origin xyz="0.075 -0.04 -0.045" rpy="0.0 0.0 0.0"/> -->
         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
         <geometry>
-          <mesh filename="package://ugv/src/meshes/WheelA.dae"/>
+          <mesh filename="package://ugv/src/meshes/WheelB.dae"/>
         </geometry>
         <material name="">
             <color rgba="1.0 0.0 0.0 1.0"/>
@@ -291,11 +294,12 @@
 
 <joint name="wheel_left_back_joint" type="continuous">
     <!-- <origin xyz="0.075 -0.04 -0.045" rpy="0.0 0.0 0.0"/> -->
-    <origin xyz="-0.15 -0.08 -0.09" rpy="0.0 0.0 0.0"/>
+      <origin xyz="0.15256 -0.08214 -0.08802" rpy="0 0 0"/>
     <parent link="rocker_left"/>
     <child link="wheel_left_back"/>
-    <axis xyz="0.0 1.0 0.0"/>
-    <limit lower="0.0" upper="6.28" effort="0.0" velocity="0.01"/>
+      <axis xyz="0 -1 0"/>
+      <limit effort="2.0" velocity="6.0"/>
+      <dynamics friction="0.3125" damping="0.1"/>
 </joint>
 
 
