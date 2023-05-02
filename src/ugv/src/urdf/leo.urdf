@@ -191,7 +191,7 @@
         </collision>
 </link>
 
-<joint name="wheel_right_back_joint" type="continuous">
+<joint name="wheel_right_back_joint" type="revolute">
     <!-- <origin xyz="0.075 -0.04 -0.045" rpy="0.0 0.0 0.0"/> -->
      <origin xyz="-0.15256 -0.08214 -0.08802" rpy="0 0 0"/>
     <parent link="rocker_right"/>
@@ -292,7 +292,7 @@
         </collision>
 </link>
 
-<joint name="wheel_left_back_joint" type="continuous">
+<joint name="wheel_left_back_joint" type="revolute">
     <!-- <origin xyz="0.075 -0.04 -0.045" rpy="0.0 0.0 0.0"/> -->
       <origin xyz="0.15256 -0.08214 -0.08802" rpy="0 0 0"/>
     <parent link="rocker_left"/>
@@ -302,7 +302,32 @@
       <dynamics friction="0.3125" damping="0.1"/>
 </joint>
 
+<!-- camera -->
 
+  <link name="camera_frame"/>
+    <link name="camera_optical_frame"/>
+    <link name="imu_frame"/> 
+
+        <joint name="camera_joint" type="fixed">
+      <origin xyz="0.0971 0 -0.0427" rpy="0 0.2094 0"/>
+      <parent link="chassis"/>
+      <child link="camera_frame"/>
+    </joint>
+
+    <joint name="camera_optical_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="-1.57 0.0 -1.57"/>
+      <parent link="camera_frame"/>
+      <child link="camera_optical_frame"/>
+    </joint>
+
+    <joint name="imu_joint" type="fixed">
+      <origin xyz="0.0628 -0.0314 -0.0393" rpy="0 0 0"/>
+      <parent link="chassis"/>
+      <child link="imu_frame"/>
+    </joint>
+
+
+<!-- gazebo -->
    <gazebo reference="chassis">
       <kp>1e6</kp>
       <kd>1.0</kd>
@@ -377,8 +402,8 @@
     <gazebo>
       <plugin name="differential_drive_controller"
           filename="libgazebo_ros_diff_drive.so">
-      <leftJoint>wheel_left_back_joint</leftJoint>
-      <rightJoint>wheel_right_back_joint</rightJoint>
+      <leftJoint>wheel_left_front_joint</leftJoint>
+      <rightJoint>wheel_right_front_joint</rightJoint>
       <legacyMode>false</legacyMode>
       
       <robotbase_footprintFrame>chassis</robotbase_footprintFrame>
@@ -386,6 +411,67 @@
       <wheelDiameter>0.07</wheelDiameter>
       <publishWheelJointState>true</publishWheelJointState>
   </plugin>
+    </gazebo>
+
+<!-- camera -->
+<gazebo reference="camera_frame">
+      <sensor type="camera" name="camera">
+        <always_on>true</always_on>
+        <update_rate>30.0</update_rate>
+        <visualize>false</visualize> 
+        <camera name="camera">
+          <horizontal_fov>1.9</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>300</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+          <distortion>
+            <k1>-0.279817</k1>
+            <k2>0.060321</k2>
+            <k3>0.000487</k3>
+            <p1>0.000310</p1>
+            <p2>0.000000</p2>
+            <center>0.5 0.5</center>
+          </distortion>
+        </camera>
+        <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+          <robotNamespace>/</robotNamespace>
+          <cameraName>camera</cameraName>
+          <imageTopicName>image_raw</imageTopicName>
+          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+          <frameName>camera_optical_frame</frameName>
+          <distortionK1>-0.279817</distortionK1>
+          <distortionK2>0.060321</distortionK2>
+          <distortionK3>0.000487</distortionK3>
+          <distortionT1>0.000310</distortionT1>
+          <distortionT2>0.000000</distortionT2>
+        </plugin>
+      </sensor>
+    </gazebo>
+
+
+        <gazebo reference="imu_frame">
+      <sensor type="imu" name="imu_sensor">
+        <update_rate>100</update_rate>
+        <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+          <robotNamespace>/</robotNamespace>
+          <topicName>imu/data_raw</topicName>
+          <frameName>imu_frame</frameName>
+          <updateRateHZ>100.0</updateRateHZ>
+          <gaussianNoise>0.01</gaussianNoise>
+          <initialOrientationAsReference>false</initialOrientationAsReference>
+        </plugin>
+      </sensor>
     </gazebo>
 
 
