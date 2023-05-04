@@ -1,0 +1,15 @@
+material landingpad/material
+{
+  receive_shadows on
+
+  technique
+  {
+    pass
+    {
+          texture_unit
+      {
+        texture test.jpg
+      }
+    }
+  }
+}
