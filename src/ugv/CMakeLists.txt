@@ -167,6 +167,8 @@ src/scripts/talker.py
 src/scripts/aruco_detection.py
 src/scripts/aruco_mark.py
 src/scripts/aruco_mark.py
+src/scripts/task_1b.py
+src/scripts/cam_to_cv.py
 
 
 DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
