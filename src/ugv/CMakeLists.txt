@@ -162,7 +162,13 @@ include_directories(
 #   scripts/my_python_script
 #   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 # )
-catkin_install_python(PROGRAMS src/scripts/talker.py
+catkin_install_python(PROGRAMS 
+src/scripts/talker.py
+src/scripts/aruco_detection.py
+src/scripts/aruco_mark.py
+src/scripts/aruco_mark.py
+
+
 DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

@@ -10,6 +10,7 @@ import cv2
 from cv2 import aruco as aruco
 import time
 from aruco_library import *
+from ugv.src.scripts.aruco_mark import *
 
 
 image_list = ["../../task_1/scripts/test_image1.png", "../../task_1/scripts/test_image2.png"]

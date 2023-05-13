@@ -1,32 +1,4 @@
-'''
-*****************************************************************************************
-*
-*        		===============================================
-*           		Pharma Bot (PB) Theme (eYRC 2022-23)
-*        		===============================================
-*
-*  This script is to implement Task 1B of Pharma Bot (PB) Theme (eYRC 2022-23).
-*  
-*  This software is made available on an "AS IS WHERE IS BASIS".
-*  Licensee/end user indemnifies and will keep e-Yantra indemnified from
-*  any and all claim(s) that emanate from the use of the Software or 
-*  breach of the terms of this agreement.
-*
-*****************************************************************************************
-'''
 
-# Team ID:			[ PB_1118]
-# Author List:		[ Names of team members worked on this file separated by Comma: Name1, Name2, ... ]
-# Filename:			task_1b.py
-# Functions:		detect_Qr_details, detect_ArUco_details
-# 					[ Comma separated list of functions in this file ]
-
-
-####################### IMPORT MODULES #######################
-## You are not allowed to make any changes in this section. ##
-## You have to implement this task with the five available  ##
-## modules for this task                                    ##
-##############################################################
 
 import numpy as np
 import cv2
@@ -176,7 +148,7 @@ def mark_Qr_image(image, Qr_codes_details):
 def mark_ArUco_image(image, ArUco_details_dict, ArUco_corners):
 
     for ids, details in ArUco_details_dict.items():
-        center = details[0]
+        center = tuple(details[0])
         cv2.circle(image, center, 5, (0, 0, 255), -1)
 
         corner = ArUco_corners[int(ids)]
@@ -209,7 +181,7 @@ def mark_ArUco_image(image, ArUco_details_dict, ArUco_corners):
 if __name__ == "__main__":
 
     # path directory of images in test_images folder
-    img_dir_path = "public_test_cases/"
+    img_dir_path = "test_cases/"
 
     # choose whether to test Qr or ArUco images
     choice = input('\nWhich images do you want to test ? => "q" or "a": ')
