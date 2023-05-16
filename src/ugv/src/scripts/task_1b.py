@@ -81,6 +81,7 @@ def detect_ArUco_details(image):
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     aruco_dict = aruco.getPredefinedDictionary(aruco.DICT_5X5_250)
     parameters = aruco.DetectorParameters_create()
+    
     (corners, ids,rejected) =  aruco.detectMarkers(
         gray, aruco_dict, parameters=parameters)
 
@@ -181,6 +182,7 @@ def mark_ArUco_image(image, ArUco_details_dict, ArUco_corners):
 if __name__ == "__main__":
 
     # path directory of images in test_images folder
+    # /home/niran/ugv_ws/src/ugv/src/scripts/test_cases/aruco_1.png
     img_dir_path = "test_cases/"
 
     # choose whether to test Qr or ArUco images
@@ -194,7 +196,7 @@ if __name__ == "__main__":
 
         marker = 'aruco'
 
-    for file_num in range(0, 2):
+    for file_num in range(0, 4):
         img_file_path = img_dir_path + marker + '_' + str(file_num) + '.png'
 
         # read image using opencv
